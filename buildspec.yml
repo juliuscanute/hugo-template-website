@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Generate static files for the website.
+      - cd personal
+      - hugo
+      - aws s3 sync public s3://${BUCKET_NAME}/
